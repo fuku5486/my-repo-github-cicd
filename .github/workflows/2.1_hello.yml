@@ -1,5 +1,5 @@
 # 2.1
-name: Hello
+name: 2.1 Hello
 on: push
 jobs:
     hello:

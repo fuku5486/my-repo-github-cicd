@@ -1,5 +1,5 @@
 # 2.5
-name: Manual
+name: 2.5 Manual
 on:
     workflow_dispatch:
         inputs:
