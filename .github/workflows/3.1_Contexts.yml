@@ -17,4 +17,3 @@ jobs:
             - run: echo "runner.arch - ${{runner.arch}}"
             - run: echo "runner.temp - ${{runner.temp}}"
             - run: echo "runner.tool_cache - ${{runner.tool_cache}}"
-            - run: echo "runner.debug - ${{runner.debug}}"
