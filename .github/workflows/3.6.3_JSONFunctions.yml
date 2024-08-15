@@ -1,0 +1,11 @@
+name: 3.6.3 JSON functions
+# on: push
+on: workflow_dispatch
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${CONTEXT}"
+              env:
+                CONTEXT: ${{ toJSON(github) }}
+                
