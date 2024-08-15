@@ -1,0 +1,10 @@
+name: 3.8.1 Naming
+# on: push
+on: workflow_dispatch
+jobs:
+    print:
+        name: Super Useful Job
+        runs-on: ubuntu-latest
+        steps:
+            - name: Amazing Script
+              run: echo "Hello"
