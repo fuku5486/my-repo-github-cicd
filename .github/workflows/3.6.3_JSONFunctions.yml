@@ -7,5 +7,4 @@ jobs:
         steps:
             - run: echo "${CONTEXT}"
               env:
-                CONTEXT: ${{ toJSON(github) }}
-                
+                CONTEXT: ${{ toJSON( github ) }}
