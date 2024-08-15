@@ -1,0 +1,13 @@
+name: 3.6.1 Compare Functions
+# on: push
+on: workflow_dispatch
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        steps:
+            - run: printenv | grep '_FUNC'
+              env:
+                CONTAINES_FUNC: ${{ contains('Hello', 'ell') }}
+                STARTS_WITH_FUNC: ${{ startsWith('Hello', 'He') }}
+                ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }}
+                
