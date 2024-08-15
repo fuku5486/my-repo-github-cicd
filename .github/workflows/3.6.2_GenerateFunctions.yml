@@ -1,0 +1,12 @@
+name: 3.6.2 Generate Functions
+# on: push
+on: workflow_dispatch
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        steps:
+            - run: printenv | grep '_FUNC'
+              env:
+                FORMAT_FUNC: ${{ format('{0}, {1}.', 'Hi', 'world') }}
+                JOIN_FUNC: ${{ join(github.event.*.html_url, ', ') }}
+                
