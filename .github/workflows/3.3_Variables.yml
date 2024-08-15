@@ -1,4 +1,4 @@
-name: 3.2 Variables
+name: 3.3 Variables
 # on: push
 on: workflow_dispatch
 jobs:
