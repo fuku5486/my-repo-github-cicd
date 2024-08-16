@@ -6,7 +6,7 @@ jobs:
         strategy:
             matrix:
                 include:                    # 組み合わせ条件を手動で列挙
-                    - os: utunbu-latest     # パターン1
+                    - os: ubuntu-latest     # パターン1
                       version: 20
                     - os: macos-latest      # パターン2
                       version: 18
