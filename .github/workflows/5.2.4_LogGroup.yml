@@ -1,0 +1,11 @@
+name: 5.2.4 Log group
+# on: push
+on: workflow_dispatch
+jobs:
+    log:
+        runs-on: ubuntu-latest
+        steps:
+            - run: |
+                echo "::group::Show environment variables"  # ロググループ化の開始
+                printenv
+                echo "::endgroup::"                         # ロググループ化の終了
