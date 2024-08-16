@@ -1,0 +1,16 @@
+name: 5.5.1 Parallel jobs
+# on: push
+on: workflow_dispatch
+jobs:
+    first:
+        runs-on: ubuntu-latest
+        steps:
+            - run: sleep 10 && echo "First job"
+    Second:
+        runs-on: ubuntu-latest
+        steps:
+            - run: sleep 15 && echo "Second job"
+    third:
+        runs-on: ubuntu-latest
+        steps:
+            - run: sleep 20 && echo "Third job"
