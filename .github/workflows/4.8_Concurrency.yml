@@ -1,0 +1,9 @@
+name: 4.8 Concurrency
+# on: push
+on: workflow_dispatch
+concurrency: ${{ github.workflow}} # Concurrencyグループへワークフロー名を指定
+jobs:
+    sleep:
+        runs-on: ubuntu-latest
+        steps:
+            - run: sleep 120
