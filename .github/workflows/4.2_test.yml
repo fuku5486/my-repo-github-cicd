@@ -1,6 +1,8 @@
 name: 4.2 Test
-# on: push
-on: workflow_dispatch
+on:
+    pull_request:
+        paths: ['go/**/*.go']
+    workflow_dispatch:
 jobs:
     test:
         runs-on: ubuntu-latest
