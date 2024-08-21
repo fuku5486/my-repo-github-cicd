@@ -1,0 +1,35 @@
+name: 14 Resuable Workflows
+on:
+  workflow_call:    # 起動するイベント
+    inputs:         # 入力パラメータ定義
+      pr-number:
+        type: string
+        default: ${{ github.event.pull_request.number }}
+        required: false
+        description: プルリクエスト番号
+    secrets:      # 入力パラメータ定義（Secrets）
+      token:
+        required: true
+        description: Githubトークン
+    outputs:      # 出力値定義
+      message:
+        value: ${{ jobs.comment.outputs.pr-comment }}       # ワークフローレベルの出力値
+        description: メッセージ
+jobs:
+    comment:
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+        pull-requests: write
+      steps:
+        - uses: actions/checkout@v4
+        - id: pr-comment
+          run: |
+            body="Welcome, ${GITHUB_ACTOR}"
+            gh pr comment "${PR_NUMBER}" --body "${body}"
+            echo "body=${body}" >> "${GITHUB_OUTPUT}"       # ステップレベルの出力値
+          env:
+            PR_NUMBER: ${{ inputs.pr-number }}
+            GITHUB_TOKEN: ${{ secrets.token }}
+      outputs:
+        pr-comment: ${{ steps.pr-comment.outputs.body }}    # ジョブレベルの出力値
